@@ -1,0 +1,32 @@
+﻿<br />
+<div class="row">
+    <div class="col-10">
+        <h2 class="text-primary">
+            Product List
+        </h2>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-success" asp-action="Upsert">
+            <i class="fas fa-add"></i>
+            New Product
+        </a>
+    </div>
+</div>
+<br />
+<table id="tblData2" class="table table-hover table-responsive table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Discription</th>
+            @*<th>ISBN</th>*@
+            <th>Author</th>
+            <th>Price</th>
+            <th>Id</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+</table>
+@section scripts
+{
+    <script src="~/js/Product.js"></script>
+}

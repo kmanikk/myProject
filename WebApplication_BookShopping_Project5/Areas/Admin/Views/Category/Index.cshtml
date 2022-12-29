@@ -1,0 +1,28 @@
+﻿<br />
+<div class="row">
+    <div class="col-10">
+        <h2 class="text-primary">
+            Category List
+        </h2>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-success" asp-action="Upsert">
+            <i class="fas fa-plus"></i>
+            New Category
+        </a>
+    </div>
+</div>
+<br />
+<table id="tblData" class="table table-hover table-responsive table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+</table>
+
+@section scripts
+{ 
+    <script src="~/js/Category.js"></script>
+}

@@ -1,0 +1,80 @@
+﻿@model BookShopping_Project_Models.Company
+@{
+    ViewBag.Title = "Company List";
+}
+<br />
+<div class="row border-bottom">
+    <div class="col-10">
+        <h2 class="text-primary">
+        ViewBag.Title
+        </h2>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-success" asp-action="Upsert">
+            <i class="fas fa-plus"></i>
+            New Company
+        </a>
+    </div>
+</div>
+&nbsp;
+<table id="tblData" class="table table-responsive table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+@*          <th>Name</th>
+            <th>StreetAddress</th>
+            <th>State</th>
+            <th>City</th>
+            <th>PhoneNumber</th>
+            <th>IsAuthorizedCompany</th>
+*@      
+            <th> @Html.DisplayNameFor(model => model.Name)</th>
+            <th> @Html.DisplayNameFor(model => model.StreetAddress)</th>
+            <th> @Html.DisplayNameFor(model => model.State)</th>
+            <th> @Html.DisplayNameFor(model => model.City)</th>
+            <th> @Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th> @Html.DisplayNameFor(model => model.IsAuthorizedCompany)</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ToString())
+        {
+             <tr>
+                <td>
+                    @Html.TextBoxFor(item=> item.Name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(item=> item.StreetAddress)
+                </td>
+                <td>
+                    @Html.TextBoxFor(item=> item.State)
+                </td>
+                <td>
+                    @Html.TextBoxFor(item=> item.City)
+                </td>
+                <td>
+                    @Html.TextBoxFor(item=> item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(item=> item.IsAuthorizedCompany)
+                </td>
+                <td>
+                    <div class="text-center">
+                          <a class="btn btn-success" href="/Admin/Company/Upsert/${data}">
+                          <i class="fas fa-edit"></i> Edit
+                          </a>
+                          <a class="btn btn-danger" onclick=Delete("/Admin/Company/Delete/${data}")>
+                          <i class="fas fa-trash"></i> Delete
+                          </a>
+                    </div>  
+                </td>
+            </tr>
+        }    
+    </tbody>
+</table>
+
+@section scripts
+{
+   @* <script src="~/js/Company.js"></script>*@
+}
+
